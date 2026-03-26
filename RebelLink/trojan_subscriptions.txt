@@ -1,6 +1,6 @@
+trojan://humanity@188.114.96.3:443?security=tls&sni=www.creationlong.org&allowInsecure=1&type=ws&host=www.creationlong.org&path=/assignment#t.me/v2Line | Free | 3452 | Cloudflare
+trojan://humanity@185.18.250.245:443?security=tls&sni=www.calmlunch.com&allowInsecure=1&type=ws&host=www.calmlunch.com&path=/assignment#t.me/v2Line | Free | 3445 | Spain
+trojan://humanity@104.18.32.37:443?security=tls&sni=www.gossipglove.com&fp=chrome&allowInsecure=1&type=ws&path=/assignment#t.me/v2Line | Free | 3420 | Cloudflare
 trojan://humanity@172.64.152.23:443?path=/assignment&security=tls&insecure=0&host=www.calmlunch.com&type=ws&allowInsecure=0&sni=www.calmlunch.com#telegram » 𝗺𝗮𝗶𝗻𝘃𝟮𝗿𝗮𝘆
 trojan://humanity@104.18.11.110:443?security=tls&sni=www.multiplydose.com&fp=chrome&allowInsecure=1&type=ws&path=/assignment#t.me/v2Line | Free | 3411 | Cloudflare
-trojan://humanity@185.18.250.245:443?security=tls&sni=www.calmlunch.com&allowInsecure=1&type=ws&host=www.calmlunch.com&path=/assignment#t.me/v2Line | Free | 3445 | Spain
-trojan://humanity@188.114.96.3:443?security=tls&sni=www.creationlong.org&allowInsecure=1&type=ws&host=www.creationlong.org&path=/assignment#t.me/v2Line | Free | 3452 | Cloudflare
-trojan://humanity@104.18.32.37:443?security=tls&sni=www.gossipglove.com&fp=chrome&allowInsecure=1&type=ws&path=/assignment#t.me/v2Line | Free | 3420 | Cloudflare
 trojan://humanity@104.21.40.34:443?security=tls&sni=www.gossipglove.com&allowInsecure=1&type=ws&host=www.gossipglove.com&path=/assignment#t.me/v2Line | Free | 3463 | Cloudflare
