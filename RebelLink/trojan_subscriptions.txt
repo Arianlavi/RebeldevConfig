@@ -1,0 +1,1 @@
+trojan://humanity@104.18.11.110:443?path=/assignment&security=tls&fp=chrome&type=ws&sni=www.multiplydose.com#[🇨🇦]t.me/ConfigsHub
