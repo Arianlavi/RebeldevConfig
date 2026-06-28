@@ -1,0 +1,129 @@
+# =============================================================================
+# RebelDev Enhanced Auto Scanner - GitHub Actions Workflow
+# =============================================================================
+name: "🚀 RebelDev - Improved Auto Config Scanner"
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+    inputs:
+      force_refresh:
+        description: 'Force full refresh (ignore cache)'
+        required: false
+        default: false
+        type: boolean
+  push:
+    branches: [ main ]
+
+env:
+  PYTHON_VERSION: '3.12'
+  SCANNER_VERSION: '4.8.0'
+  MAX_SCAN_TIME: '50m'
+
+jobs:
+  improved-scan-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    
+    permissions:
+      contents: write
+
+    steps:
+      - name: "🔄 Checkout Repository"
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: "🐍 Setup Python"
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: 'pip'
+
+      - name: "📦 Install Dependencies"
+        run: |
+          python -m pip install --upgrade pip
+          pip install aiohttp
+
+      - name: "🔧 System Optimization"
+        run: |
+          sudo sysctl -w net.ipv4.ping_group_range="0 2147483647" || true
+          sudo apt-get update && sudo apt-get install -y curl iputils-ping || true
+
+      - name: "🧹 Clean Previous Data"
+        run: |
+          rm -rf RebelLink/ config_cache.json scanner.log || true
+
+      - name: "🚀 Run Enhanced Scanner"
+        run: |
+          echo "🚀 Starting RebelDev Scanner v${{ env.SCANNER_VERSION }}"
+          timeout ${{ env.MAX_SCAN_TIME }} python auto_scanner.py
+        env:
+          FORCE_REFRESH: ${{ inputs.force_refresh || 'false' }}
+
+      - name: "✅ Validate Output"
+        run: |
+          if [ -f "RebelLink/performance_report.json" ]; then
+            python3 - <<EOF
+import json
+try:
+    with open("RebelLink/performance_report.json") as f:
+        report = json.load(f)
+    metrics = report.get("performance_metrics", {})
+    print("="*60)
+    print("✅ SCAN COMPLETED SUCCESSFULLY")
+    print("="*60)
+    print(f"📋 Total Processed : {metrics.get('total_processed', 0)}")
+    print(f"✅ Valid Configs   : {metrics.get('valid_configs', 0)}")
+    print(f"📊 Success Rate    : {metrics.get('success_rate', 0)}%")
+    print(f"⚡ Avg Latency     : {metrics.get('avg_latency_ms', 0)}ms")
+    print(f"⭐ Avg Score       : {metrics.get('avg_score', 0)}")
+    print("="*60)
+except Exception as e:
+    print(f"⚠️ Error reading report: {e}")
+EOF
+          fi
+
+      - name: "🔄 Commit & Push Changes"
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "RebelDev Scanner Bot"
+          
+          if git diff --quiet HEAD -- RebelLink/; then
+            echo "🟡 No changes detected"
+          else
+            git add RebelLink/
+            
+            VALID_COUNT=$(python3 -c "
+import json
+try:
+    with open('RebelLink/performance_report.json') as f:
+        data = json.load(f)
+    print(data['performance_metrics']['valid_configs'])
+except:
+    print('N/A')
+" 2>/dev/null || echo "N/A")
+            
+            TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
+            
+            git commit -m "🤖 Auto-Update: ${TIMESTAMP}" \
+                       -m "v${{ env.SCANNER_VERSION }} - ${VALID_COUNT} valid configs"
+            
+            git pull --rebase origin main || true
+            git push
+            echo "✅ Changes pushed successfully"
+          fi
+
+      - name: "📤 Upload Artifacts"
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rebeldev-scan-results-${{ github.run_number }}
+          path: |
+            RebelLink/
+            scanner.log
+            performance_report.json
+          retention-days: 14
+          if-no-files-found: warn
