@@ -134,7 +134,7 @@ class EnterpriseLogger:
 
 
 # =============================================================================
-# PARSER (Fixed for trojan/vless/ss, non-ASCII)
+# PARSER (for trojan/vless/ss, non-ASCII)
 # =============================================================================
 
 class ConfigurationParser:
