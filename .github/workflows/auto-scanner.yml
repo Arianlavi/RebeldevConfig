@@ -18,7 +18,7 @@ on:
 
 env:
   PYTHON_VERSION: '3.12'
-  SCANNER_VERSION: '4.7.0'
+  SCANNER_VERSION: '4.8.0'
   MAX_SCAN_TIME: '45m'
 
 jobs:
