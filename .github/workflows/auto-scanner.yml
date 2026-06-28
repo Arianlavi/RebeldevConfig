@@ -1,16 +1,15 @@
 # =============================================================================
 # RebelDev Enhanced Auto Scanner - GitHub Actions Workflow
 # =============================================================================
-
 name: "🚀 RebelDev - Improved Auto Config Scanner"
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '0 * * * *' 
   workflow_dispatch:
     inputs:
       force_refresh:
-        description: 'Force refresh all configurations'
+        description: 'Force full refresh (ignore cache)'
         required: false
         default: false
         type: boolean
@@ -20,17 +19,23 @@ on:
 env:
   PYTHON_VERSION: '3.12'
   SCANNER_VERSION: '4.7.0'
+  MAX_SCAN_TIME: '45m'
 
 jobs:
   improved-scan-and-deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 55
+    
+    permissions:
+      contents: write
+      actions: read
 
     steps:
       - name: "🔄 Checkout Repository"
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: "🐍 Setup Python"
         uses: actions/setup-python@v5
@@ -41,69 +46,116 @@ jobs:
       - name: "📦 Install Dependencies"
         run: |
           python -m pip install --upgrade pip
-          pip install aiohttp requests
-      - name: "🔧 Setup System Permissions"
+          pip install aiohttp asyncio
+
+      - name: "🔧 System Optimization"
         run: |
+          echo "Optimizing system for better connectivity..."
           sudo sysctl -w net.ipv4.ping_group_range="0 2147483647" || true
-          sudo apt-get update && sudo apt-get install -y curl || true
-      - name: "🧹 Clean Cache"
+          sudo apt-get update && sudo apt-get install -y curl iputils-ping dnsutils || true
+
+      - name: "🧹 Clean Previous Data"
         run: |
-          rm -rf RebelLink || true
-      - name: "🚀 Run Scanner"
+          rm -rf RebelLink/ config_cache.json scanner.log || true
+          echo "✅ Previous cache cleaned"
+
+      - name: "🚀 Run Enhanced Scanner"
         run: |
-          echo "Starting scan v${{ env.SCANNER_VERSION }}..."
-          timeout 40m python auto_scanner.py
-      - name: "✅ Validate Output"
+          echo "🚀 Starting RebelDev Scanner v${{ env.SCANNER_VERSION }}"
+          echo "Force Refresh: ${{ inputs.force_refresh || 'false' }}"
+          
+          timeout ${{ env.MAX_SCAN_TIME }} python auto_scanner.py
+        env:
+          FORCE_REFRESH: ${{ inputs.force_refresh || 'false' }}
+
+      - name: "✅ Validate Output & Generate Report"
         run: |
-          echo "Validating generated configurations..."
-          if [ -d "RebelLink" ]; then
-            sub_count=$(find RebelLink -name "*_subscriptions.txt" -type f | wc -l)
-            echo "Found $sub_count subscription files"
-            if [ -f "RebelLink/performance_report.json" ]; then
-              echo 'import json' > validate_report.py
-              echo 'try:' >> validate_report.py
-              echo '    with open("RebelLink/performance_report.json") as f:' >> validate_report.py
-              echo '        r = json.load(f)' >> validate_report.py
-              echo '    print("✅ Scan completed: " + r["scan_timestamp"])' >> validate_report.py
-              echo '    print("📋 Processed: " + str(r["performance_metrics"]["total_processed"]))' >> validate_report.py
-              echo '    print("✅ Valid: " + str(r["performance_metrics"]["valid_configs"]))' >> validate_report.py
-              echo '    print("📊 Success rate: " + str(r["performance_metrics"]["success_rate"]) + "%")' >> validate_report.py
-              echo '    print("⚡ Avg Latency: " + str(r["performance_metrics"]["avg_latency_ms"]) + "ms")' >> validate_report.py
-              echo '    print("⭐ Avg Score: " + str(r["performance_metrics"]["avg_score"]))' >> validate_report.py
-              echo 'except Exception as e:' >> validate_report.py
-              echo '    print("⚠️ Report read error: " + str(e))' >> validate_report.py
-              python validate_report.py
-              rm validate_report.py
-            else
-              echo "⚠️ performance_report.json not found"
-              exit 1
-            fi
-          else
-            echo "❌ RebelLink folder missing"
+          echo "🔍 Validating scan results..."
+          
+          if [ ! -d "RebelLink" ]; then
+            echo "❌ RebelLink directory not found!"
             exit 1
           fi
-          echo "✅ Validation passed"
-      - name: "🔄 Deploy Configurations"
+
+          SUB_COUNT=$(find RebelLink -name "*_subscriptions.txt" -type f | wc -l)
+          echo "📊 Found $SUB_COUNT subscription files"
+
+          if [ -f "RebelLink/performance_report.json" ]; then
+            python3 - <<'EOF'
+import json
+import sys
+try:
+    with open("RebelLink/performance_report.json", encoding='utf-8') as f:
+        report = json.load(f)
+    
+    metrics = report.get("performance_metrics", {})
+    print("="*50)
+    print("✅ SCAN COMPLETED SUCCESSFULLY")
+    print("="*50)
+    print(f"📋 Total Processed : {metrics.get('total_processed', 0)}")
+    print(f"✅ Valid Configs   : {metrics.get('valid_configs', 0)}")
+    print(f"📊 Success Rate    : {metrics.get('success_rate', 0)}%")
+    print(f"⚡ Avg Latency     : {metrics.get('avg_latency_ms', 0)}ms")
+    print(f"⭐ Avg Score       : {metrics.get('avg_score', 0)}")
+    print(f"⏱️  Duration       : {report.get('duration_seconds', 0)} seconds")
+    print("="*50)
+except Exception as e:
+    print(f"⚠️ Report parsing error: {e}")
+    sys.exit(1)
+EOF
+          else
+            echo "⚠️ performance_report.json not found"
+            exit 1
+          fi
+
+      - name: "🔄 Commit & Push Changes"
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "RebelDev Improved Scanner"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "RebelDev Scanner Bot"
+          
           if git diff --quiet HEAD -- RebelLink/; then
-            echo "🟡 No configuration changes detected"
+            echo "🟡 No changes detected - skipping commit"
           else
             git add RebelLink/
-            valid_count=$(python -c "import json; d=json.load(open('RebelLink/performance_report.json')); print(d['performance_metrics']['valid_configs'])")
-            timestamp=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
-            git commit -m "🤖 Auto-Update: ${timestamp}" \
-                        -m "v${{ env.SCANNER_VERSION }} - ${valid_count} valid configs"
+            
+            VALID_COUNT=$(python3 -c "
+import json
+try:
+    with open('RebelLink/performance_report.json') as f:
+        data = json.load(f)
+    print(data['performance_metrics']['valid_configs'])
+except:
+    print('N/A')
+" 2>/dev/null || echo "N/A")
+            
+            TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
+            
+            git commit -m "🤖 Auto Update: ${TIMESTAMP}" \
+                       -m "Version: v${{ env.SCANNER_VERSION }}" \
+                       -m "Valid configs: ${VALID_COUNT}" \
+                       -m "Scheduled scan"
+            
             git push
+            echo "✅ Successfully pushed new configurations"
           fi
+
       - name: "📤 Upload Artifacts"
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: rebeldev-scan-results
+          name: rebeldev-scan-results-${{ github.run_number }}
           path: |
             RebelLink/
             scanner.log
-          retention-days: 7
-          if-no-files-found: ignore
+            performance_report.json
+          retention-days: 14
+          if-no-files-found: warn
+
+      - name: "📊 Final Summary"
+        run: |
+          echo "🎉 RebelDev Scanner Workflow Completed!"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "Scan Version     : v${{ env.SCANNER_VERSION }}"
+          echo "Run ID           : ${{ github.run_id }}"
+          echo "Status           : Success"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
