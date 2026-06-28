@@ -1,7 +1,8 @@
 # =============================================================================
-# RebelDev Enhanced Auto Scanner - GitHub Actions Workflow
+# RebelDev Auto Scanner - GitHub Actions Workflow
 # =============================================================================
-name: "🚀 RebelDev - Ultra Scanner"
+
+name: "🚀 RebelDev - Auto Config Scanner"
 
 on:
   schedule:
@@ -9,7 +10,7 @@ on:
   workflow_dispatch:
     inputs:
       force_refresh:
-        description: 'Force full refresh (clear cache)'
+        description: 'Force refresh all configurations'
         required: false
         default: false
         type: boolean
@@ -19,22 +20,17 @@ on:
 env:
   PYTHON_VERSION: '3.12'
   SCANNER_VERSION: '4.8.0'
-  MAX_SCAN_TIME: '55m'
 
 jobs:
-  ultra-scan:
+  improved-scan-and-deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 65
-    
-    permissions:
-      contents: write
+    timeout-minutes: 45
 
     steps:
       - name: "🔄 Checkout Repository"
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: "🐍 Setup Python"
         uses: actions/setup-python@v5
@@ -45,80 +41,69 @@ jobs:
       - name: "📦 Install Dependencies"
         run: |
           python -m pip install --upgrade pip
-          pip install aiohttp
-
-      - name: "⚡ System Optimization"
+          pip install aiohttp requests
+      - name: "🔧 Setup System Permissions"
         run: |
           sudo sysctl -w net.ipv4.ping_group_range="0 2147483647" || true
-          sudo apt-get update && sudo apt-get install -y curl iputils-ping || true
-
-      - name: "🧹 Clean Everything"
+          sudo apt-get update && sudo apt-get install -y curl || true
+      - name: "🧹 Clean Cache"
         run: |
-          rm -rf RebelLink/ config_cache.json scanner.log || true
-          echo "🧼 Cache cleaned"
-
-      - name: "🚀 Run Ultra Scanner"
+          rm -rf RebelLink || true
+      - name: "🚀 Run Scanner"
         run: |
-          echo "🌟 Starting RebelDev Ultra Scanner v${{ env.SCANNER_VERSION }}"
-          echo "Force Refresh: ${{ inputs.force_refresh || 'false' }}"
-          timeout ${{ env.MAX_SCAN_TIME }} python auto_scanner.py
-        env:
-          FORCE_REFRESH: ${{ inputs.force_refresh || 'false' }}
-
-      - name: "✅ Validate & Show Results"
+          echo "Starting scan v${{ env.SCANNER_VERSION }}..."
+          timeout 40m python auto_scanner.py
+      - name: "✅ Validate Output"
         run: |
-          echo "🔍 Validating results..."
-          if [ -f "RebelLink/performance_report.json" ]; then
-            python3 - <<EOF
-import json
-try:
-    with open("RebelLink/performance_report.json") as f:
-        r = json.load(f)
-    m = r.get("performance_metrics", {})
-    print("✅ SCAN SUCCESSFUL")
-    print("="*50)
-    print(f"📊 Valid Configs   : {m.get('valid_configs', 0)}")
-    print(f"📈 Success Rate    : {m.get('success_rate', 0)}%")
-    print(f"⚡ Avg Latency     : {m.get('avg_latency_ms', 0)}ms")
-    print(f"⭐ Avg Score       : {m.get('avg_score', 0)}")
-    print(f"⏱ Duration       : {r.get('duration_seconds', 0)}s")
-except Exception as e:
-    print(f"⚠️ Report error: {e}")
-EOF
+          echo "Validating generated configurations..."
+          if [ -d "RebelLink" ]; then
+            sub_count=$(find RebelLink -name "*_subscriptions.txt" -type f | wc -l)
+            echo "Found $sub_count subscription files"
+            if [ -f "RebelLink/performance_report.json" ]; then
+              echo 'import json' > validate_report.py
+              echo 'try:' >> validate_report.py
+              echo '    with open("RebelLink/performance_report.json") as f:' >> validate_report.py
+              echo '        r = json.load(f)' >> validate_report.py
+              echo '    print("✅ Scan completed: " + r["scan_timestamp"])' >> validate_report.py
+              echo '    print("📋 Processed: " + str(r["performance_metrics"]["total_processed"]))' >> validate_report.py
+              echo '    print("✅ Valid: " + str(r["performance_metrics"]["valid_configs"]))' >> validate_report.py
+              echo '    print("📊 Success rate: " + str(r["performance_metrics"]["success_rate"]) + "%")' >> validate_report.py
+              echo '    print("⚡ Avg Latency: " + str(r["performance_metrics"]["avg_latency_ms"]) + "ms")' >> validate_report.py
+              echo '    print("⭐ Avg Score: " + str(r["performance_metrics"]["avg_score"]))' >> validate_report.py
+              echo 'except Exception as e:' >> validate_report.py
+              echo '    print("⚠️ Report read error: " + str(e))' >> validate_report.py
+              python validate_report.py
+              rm validate_report.py
+            else
+              echo "⚠️ performance_report.json not found"
+              exit 1
+            fi
+          else
+            echo "❌ RebelLink folder missing"
+            exit 1
           fi
-
-      - name: "🔄 Smart Commit & Push"
+          echo "✅ Validation passed"
+      - name: "🔄 Deploy Configurations"
         run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "RebelDev Ultra Scanner"
-          
+          git config --local user.email "action@github.com"
+          git config --local user.name "RebelDev Improved Scanner"
           if git diff --quiet HEAD -- RebelLink/; then
-            echo "🟡 No changes"
+            echo "🟡 No configuration changes detected"
           else
             git add RebelLink/
-            VALID=$(python3 -c "
-import json
-try:
-    with open('RebelLink/performance_report.json') as f:
-        print(json.load(f)['performance_metrics']['valid_configs'])
-except: print('N/A')
-" 2>/dev/null || echo "N/A")
-            
-            git commit -m "🤖 Ultra Update $(date -u +'%Y-%m-%d %H:%M UTC')" \
-                       -m "v${{ env.SCANNER_VERSION }} • ${VALID} valid configs"
-            
-            git pull --rebase origin main || true
+            valid_count=$(python -c "import json; d=json.load(open('RebelLink/performance_report.json')); print(d['performance_metrics']['valid_configs'])")
+            timestamp=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
+            git commit -m "🤖 Auto-Update: ${timestamp}" \
+                        -m "v${{ env.SCANNER_VERSION }} - ${valid_count} valid configs"
             git push
-            echo "🚀 Successfully pushed new configs"
           fi
-
-      - name: "📤 Upload Results"
+      - name: "📤 Upload Artifacts"
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: rebeldev-scan-${{ github.run_number }}
+          name: rebeldev-scan-results
           path: |
             RebelLink/
             scanner.log
-            performance_report.json
-          retention-days: 14
+          retention-days: 7
+          if-no-files-found: ignore
