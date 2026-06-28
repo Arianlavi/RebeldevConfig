@@ -66,7 +66,7 @@ jobs:
       - name: "✅ Validate Output"
         run: |
           if [ -f "RebelLink/performance_report.json" ]; then
-            python3 - <<EOF
+            python3 - <<'EOF'
 import json
 try:
     with open("RebelLink/performance_report.json") as f:
