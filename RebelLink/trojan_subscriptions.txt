@@ -1,15 +1,15 @@
-trojan://6c862415-30d2-4813-8e49-42e99a0bd415@104.16.72.70:443?path=/us-gllc&security=tls&insecure=0&host=space.byu.id.yxls.eu.cc&type=ws&allowInsecure=0&sni=space.byu.id.yxls.eu.cc#irconfiig✨تو جنگم وصلیم✨
 trojan://6c862415-30d2-4813-8e49-42e99a0bd415@104.16.72.70:443?type=ws&security=tls&path=/us-gllc&host=space.byu.id.yxls.eu.cc&sni=space.byu.id.yxls.eu.cc#kurdconfig
 trojan://MITIVPN@151.101.1.194:80?path=/ed&security=none&host=mitivpn--3.global.ssl.fastly.net&type=ws#همه اپراتور سرعتی
 trojan://MITIVPN@164.38.155.135:443?path=/MiTiVPN=De&security=tls&alpn=http/1.1&insecure=0&host=95r.ir&fp=chrome&type=ws&allowInsecure=0&sni=95r.ir#kurdconfig
+trojan://6c862415-30d2-4813-8e49-42e99a0bd415@104.16.72.70:443?path=/us-gllc&security=tls&insecure=0&host=space.byu.id.yxls.eu.cc&type=ws&allowInsecure=0&sni=space.byu.id.yxls.eu.cc#irconfiig✨تو جنگم وصلیم✨
 trojan://114514@cf7.466688.xyz:443?security=tls&sni=tjaaa.hhllfly.kdns.fr&insecure=0&allowInsecure=0&type=ws&host=tjaaa.hhllfly.kdns.fr&path=/#https://t.me/QiangLieTuiJian
 trojan://114514@cf6.466688.xyz:443?security=tls&sni=tjaaa.hhllfly.kdns.fr&insecure=0&allowInsecure=0&type=ws&host=tjaaa.hhllfly.kdns.fr&path=/#https://t.me/QiangLieTuiJian
-trojan://114514@cf9.466688.xyz:443?security=tls&sni=tjaaa.hhllfly.kdns.fr&insecure=0&allowInsecure=0&type=ws&host=tjaaa.hhllfly.kdns.fr&path=/#https://t.me/QiangLieTuiJian
-trojan://114514@cf3.466688.xyz:443?security=tls&sni=tjaaa.hhllfly.kdns.fr&insecure=0&allowInsecure=0&type=ws&host=tjaaa.hhllfly.kdns.fr&path=/#https://t.me/QiangLieTuiJian
 trojan://114514@cf10.466688.xyz:443?security=tls&sni=tjaaa.hhllfly.kdns.fr&insecure=0&allowInsecure=0&type=ws&host=tjaaa.hhllfly.kdns.fr&path=/#https://t.me/QiangLieTuiJian
+trojan://114514@cf3.466688.xyz:443?security=tls&sni=tjaaa.hhllfly.kdns.fr&insecure=0&allowInsecure=0&type=ws&host=tjaaa.hhllfly.kdns.fr&path=/#https://t.me/QiangLieTuiJian
+trojan://114514@cf9.466688.xyz:443?security=tls&sni=tjaaa.hhllfly.kdns.fr&insecure=0&allowInsecure=0&type=ws&host=tjaaa.hhllfly.kdns.fr&path=/#https://t.me/QiangLieTuiJian
 trojan://114514@cf4.466688.xyz:443?security=tls&sni=tjaaa.hhllfly.kdns.fr&insecure=0&allowInsecure=0&type=ws&host=tjaaa.hhllfly.kdns.fr&path=/#https://t.me/QiangLieTuiJian
-trojan://114514@cf5.466688.xyz:443?security=tls&sni=tjaaa.hhllfly.kdns.fr&insecure=0&allowInsecure=0&type=ws&host=tjaaa.hhllfly.kdns.fr&path=/#https://t.me/QiangLieTuiJian
 trojan://114514@cf1.466688.xyz:443?security=tls&sni=tjaaa.hhllfly.kdns.fr&insecure=0&allowInsecure=0&type=ws&host=tjaaa.hhllfly.kdns.fr&path=/#https://t.me/QiangLieTuiJian
+trojan://114514@cf5.466688.xyz:443?security=tls&sni=tjaaa.hhllfly.kdns.fr&insecure=0&allowInsecure=0&type=ws&host=tjaaa.hhllfly.kdns.fr&path=/#https://t.me/QiangLieTuiJian
 trojan://114514@cf2.466688.xyz:443?security=tls&sni=tjaaa.hhllfly.kdns.fr&insecure=0&allowInsecure=0&type=ws&host=tjaaa.hhllfly.kdns.fr&path=/#https://t.me/QiangLieTuiJian
 trojan://6A9UE1QmtnW4t0WRLtt8pw@Malavant.hardvezoo.ir:2763?security=none&type=ws#Proxy_Se7en
 trojan://114514@cf8.466688.xyz:443?security=tls&sni=tjaaa.hhllfly.kdns.fr&insecure=0&allowInsecure=0&type=ws&host=tjaaa.hhllfly.kdns.fr&path=/#https://t.me/QiangLieTuiJian
