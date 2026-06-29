@@ -58,7 +58,7 @@ RebelLink/
 Rebeldev/
 │── RebelLink/        # کانفیگ‌ های ‌بروز و تست‌ شده
 │── .github/workflows # سیستم اتوماسیون آپدیت
-│── index.html        # گیت‌ پیج
+│── index.html        # صفحه وب
 │── README.md         # همین فایل
 
 ```
