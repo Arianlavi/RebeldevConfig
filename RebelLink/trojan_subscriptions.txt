@@ -1,8 +1,2 @@
-trojan://86957ec0-b213-433b-a43b-51f2175e0ec3@104.16.72.41:443?path=/au-do&security=tls&insecure=0&host=space.byu.id.yxls.eu.cc&type=ws&allowInsecure=0&sni=space.byu.id.yxls.eu.cc#🇦🇺Telegram. V2raySaman
-trojan://86957ec0-b213-433b-a43b-51f2175e0ec3@104.16.72.70:443?path=/au-do&security=tls&host=space.byu.id.yxls.eu.cc&type=ws&sni=space.byu.id.yxls.eu.cc#🇦🇺
-trojan://86957ec0-b213-433b-a43b-51f2175e0ec3@104.16.72.101:443?path=/au-do&security=tls&insecure=0&host=Proxy-Se7en---Proxy-Se7en---Proxy-Se7en---Proxy-Se7en---Proxy-Se7en---Proxy-Se7en---Proxy-Se7en&type=ws&allowInsecure=0&sni=space.byu.id.yxls.eu.cc#Proxy_Se7en
-trojan://86957ec0-b213-433b-a43b-51f2175e0ec3@104.16.72.2:443?path=/au-do&security=tls&insecure=0&host=Proxy-Se7en---Proxy-Se7en---Proxy-Se7en---Proxy-Se7en---Proxy-Se7en---Proxy-Se7en---Proxy-Se7en&type=ws&allowInsecure=0&sni=space.byu.id.yxls.eu.cc#Proxy_Se7en
-trojan://86957ec0-b213-433b-a43b-51f2175e0ec3@104.16.72.41:443?path=/au-do&security=tls&host=space.byu.id.yxls.eu.cc&type=ws&sni=space.byu.id.yxls.eu.cc#🇦🇺
-trojan://86957ec0-b213-433b-a43b-51f2175e0ec3@104.16.72.41:443?path=/au-do&security=tls&insecure=0&host=space.byu.id.yxls.eu.cc&type=ws&allowInsecure=0&sni=space.byu.id.yxls.eu.cc#🇦🇺V2raySaman
 trojan://6c862415-30d2-4813-8e49-42e99a0bd415@104.16.72.70:443?path=/us-gllc&security=tls&host=space.byu.id.yxls.eu.cc&type=ws&sni=space.byu.id.yxls.eu.cc#🇺🇸
-trojan://19877587-ed94-4033-88cd-4ac50a5e8718@104.16.148.5:443?security=tls&sni=dimskiee.biz.id&insecure=0&allowInsecure=0&type=ws&host=dimskiee.biz.id&path=/WangCai-8#t.me/ConfigFori  -  Config 88126
+trojan://6c862415-30d2-4813-8e49-42e99a0bd415@104.16.72.70:443?path=/us-gllc&security=tls&insecure=0&host=space.byu.id.yxls.eu.cc&type=ws&allowInsecure=0&sni=space.byu.id.yxls.eu.cc#NetMeli9-27
