@@ -1,2 +1,1 @@
-trojan://2TzqY10FJL@4-3-2-2-2-5-5-3xxxvwhay.poki-pakipon.ir:61235?security=reality&pbk=oNsecxmNieB69yz09GhDj87Bcz4vgeokWlrZO1qJlmY&host=yahoo.com&headerType=http&fp=chrome&spx=/&type=tcp&sni=yahoo.com#kurdconfig
 trojan://1N2o5bPwwA@151.101.34.144:443?mode=packet-up&path=/da&security=tls&alpn=h2,http/1.1&insecure=0&host=networkzvx.global.ssl.fastly.net&fp=chrome&type=xhttp&allowInsecure=0&sni=global.fastly.com#V2ray_Alpha⛱️ 6
