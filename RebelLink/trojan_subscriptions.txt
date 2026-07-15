@@ -1,19 +1,6 @@
-trojan://86957ec0-b213-433b-a43b-51f2175e0ec3@104.16.72.101:443?path=/au-do&security=tls&insecure=0&host=Proxy-Se7en---Proxy-Se7en---Proxy-Se7en---Proxy-Se7en---Proxy-Se7en---Proxy-Se7en---Proxy-Se7en&type=ws&allowInsecure=0&sni=space.byu.id.yxls.eu.cc#Proxy_Se7en
-trojan://86957ec0-b213-433b-a43b-51f2175e0ec3@104.16.72.2:443?path=/au-do&security=tls&insecure=0&host=space.byu.id.yxls.eu.cc&type=ws&allowInsecure=0&sni=space.byu.id.yxls.eu.cc#🇦🇺
-trojan://86957ec0-b213-433b-a43b-51f2175e0ec3@104.16.72.2:443?security=tls&sni=space.byu.id.yxls.eu.cc&allowinsecure=0&type=ws&host=space.byu.id.yxls.eu.cc&path=/au-do#🇩🇪https://t.me/FREE_VPN02
-trojan://86957ec0-b213-433b-a43b-51f2175e0ec3@104.16.72.41:443?path=/au-do&security=tls&host=space.byu.id.yxls.eu.cc&type=ws&sni=space.byu.id.yxls.eu.cc#🇦🇺
-trojan://2238e2f3-1a01-485e-8c22-24b65764c68b@172.64.152.23:443?path=/51.91.253.83&security=tls&insecure=0&host=gzjx.dpdns.org&type=ws&allowInsecure=0&sni=gzjx.dpdns.org#canfingV2rayNG-36
-trojan://2238e2f3-1a01-485e-8c22-24b65764c68b@172.64.152.23:443?path=/51.91.253.83&security=tls&insecure=0&host=gzjx.dpdns.org&type=ws&allowInsecure=0&sni=gzjx.dpdns.org#🇨🇦111268 | ⚡️Telegram = t.me/SOSkeyNET
+trojan://52701795-3c3b-46b4-b7cf-c5978b3a4cf2@172.67.149.124:443?security=tls&type=grpc&sni=hdfyc1.achaemenidempireofpersia.uk#🇨🇦111459 | ⚡️Telegram = t.me/SOSkeyNET
 trojan://257d8622-6701-4c98-a432-67a9696f58ae@172.67.218.196:443?path=/Novan-ID9&security=tls&insecure=0&host=shazira.app&type=ws&allowInsecure=0&sni=shazira.app#⚪t.me/iProxyChannel 2
-trojan://86957ec0-b213-433b-a43b-51f2175e0ec3@104.16.72.2:443?path=/au-do&security=tls&insecure=0&host=Proxy-Se7en---Proxy-Se7en---Proxy-Se7en---Proxy-Se7en---Proxy-Se7en---Proxy-Se7en---Proxy-Se7en&type=ws&allowInsecure=0&sni=space.byu.id.yxls.eu.cc#Proxy_Se7en
-trojan://8r<[9'l6hAO#8ZQi@172.64.149.54:2096?path=/tr&security=tls&insecure=0&host=Koma-YT.PAGeS.Dev&type=ws&allowInsecure=0&sni=Koma-YT.PAGeS.Dev#‌
 trojan://257d8622-6701-4c98-a432-67a9696f58ae@shazira.app:443?path=/Novan-ID9&security=tls&insecure=1&fp=chrome&type=ws&allowInsecure=1&sni=shazira.app#🟡t.me/iProxyChannel 15
-trojan://CF68213490@loyal-molly.rooster465.autos:443?allowInsecure=0&sni=loyal-molly.rooster465.autos#🇯🇵111135 | ⚡️Telegram = t.me/SOSkeyNET
-trojan://CF68213490@fair-werewolf.rooster465.autos:443?allowInsecure=0&sni=fair-werewolf.rooster465.autos#🇯🇵111130 | ⚡️Telegram = t.me/SOSkeyNET
-trojan://CF68213490@live-drake.rooster465.autos:443?allowInsecure=0&sni=live-drake.rooster465.autos#🇯🇵111134 | ⚡️Telegram = t.me/SOSkeyNET
-trojan://CF68213490@eminent-dogfish.rooster465.autos:443?allowInsecure=0&sni=eminent-dogfish.rooster465.autos#🇯🇵111129 | ⚡️Telegram = t.me/SOSkeyNET
-trojan://CF68213490@funny-hawk.rooster465.autos:443?allowInsecure=0&sni=funny-hawk.rooster465.autos#🇯🇵111131 | ⚡️Telegram = t.me/SOSkeyNET
-trojan://CF68213490@funny-hen.rooster465.autos:443?allowInsecure=0&sni=funny-hen.rooster465.autos#🇯🇵111133 | ⚡️Telegram = t.me/SOSkeyNET
-trojan://CF68213490@smashing-fawn.rooster465.autos:443?allowInsecure=0&sni=smashing-fawn.rooster465.autos#🇯🇵111138 | ⚡️Telegram = t.me/SOSkeyNET
-trojan://CF68213490@smooth-hornet.rooster465.autos:443?allowInsecure=0&sni=smooth-hornet.rooster465.autos#🇯🇵111137 | ⚡️Telegram = t.me/SOSkeyNET
-trojan://CF68213490@easy-barnacle.rooster465.autos:443?allowInsecure=0&sni=easy-barnacle.rooster465.autos#🇯🇵111141 | ⚡️Telegram = t.me/SOSkeyNET
+trojan://-----BanV2ray----@bnbnbbnbnbnbnbnbnbnbnbnbnvn.poki-pakipon.ir:20894?mode=gun&security=reality&authority=v2rayNplus--v2rayNplus--v2rayNplus&pbk=bJrhMKdMfPjEZ-EUazGR6h-uUDWAFxXG1MZlUVsd3Ak&fp=chrome&spx=/&type=grpc&sni=chi.yahoo.com#🇨🇭111511 | ⚡️Telegram = t.me/SOSkeyNET
+trojan://------BanV2ray-----@bnbnbbnbnbnbnbnbnbnbnbnbnvn.poki-pakipon.ir:19442?mode=gun&security=reality&authority=v2rayNplus--v2rayNplus--v2rayNplus&pbk=bJrhMKdMfPjEZ-EUazGR6h-uUDWAFxXG1MZlUVsd3Ak&fp=chrome&spx=/&type=grpc&sni=chi.yahoo.com#🇨🇭111510 | ⚡️Telegram = t.me/SOSkeyNET
+trojan://-------BanV2ray------@bnbnbbnbnbnbnbnbnbnbnbnbnvn.poki-pakipon.ir:53159?mode=gun&security=reality&authority=v2rayNplus--v2rayNplus--v2rayNplus&pbk=bJrhMKdMfPjEZ-EUazGR6h-uUDWAFxXG1MZlUVsd3Ak&fp=chrome&spx=/&type=grpc&sni=chi.yahoo.com#🇨🇭111509 | ⚡️Telegram = t.me/SOSkeyNET
