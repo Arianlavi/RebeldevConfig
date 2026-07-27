@@ -1,2 +1,9 @@
+trojan://521314@104.16.97.215:443?host=tjplay.lxdxo.kdns.fr&path=Telegram&sni=tjplay.lxdxo.kdns.fr&type=ws#🇨🇦124108 | ⚡️Telegram = t.me/SOSkeyNET
+trojan://521314@104.234.239.27:443?path=/pyip=Telegram-WangCai2🇨🇳&security=tls&insecure=0&host=hhtj.hhllfly.kdns.fr&type=ws&allowInsecure=0&sni=hhtj.hhllfly.kdns.fr#🚀t.me/iProxyChannel 9
+trojan://521314@170.114.45.27:443?path=/pyip=Telegram-WangCai2🇨🇳&security=tls&insecure=0&host=hhtj.hhllfly.kdns.fr&type=ws&allowInsecure=0&sni=hhtj.hhllfly.kdns.fr#🚀t.me/iProxyChannel 3
+trojan://521314@45.131.4.27:443?path=/pyip=Telegram-WangCai2🇨🇳&security=tls&insecure=0&host=hhtj.hhllfly.kdns.fr&type=ws&allowInsecure=0&sni=hhtj.hhllfly.kdns.fr#🚀t.me/iProxyChannel 13
+trojan://521314@46.202.30.27:443?path=/pyip=Telegram-WangCai2🇨🇳&security=tls&insecure=0&host=hhtj.hhllfly.kdns.fr&type=ws&allowInsecure=0&sni=hhtj.hhllfly.kdns.fr#🚀t.me/iProxyChannel 10
+trojan://521314@91.193.58.31:443?path=/pyip=Telegram-WangCai2🇨🇳&security=tls&insecure=0&host=hhtj.hhllfly.kdns.fr&type=ws&allowInsecure=0&sni=hhtj.hhllfly.kdns.fr#🚀t.me/iProxyChannel 2
+trojan://521314@45.192.223.27:443?path=/pyip=Telegram-WangCai2🇨🇳&security=tls&insecure=0&host=hhtj.hhllfly.kdns.fr&type=ws&allowInsecure=0&sni=hhtj.hhllfly.kdns.fr#🚀t.me/iProxyChannel 8
 trojan://0_Oms89nH82l_Ki813_Nxmw81_Rbt_Jq190Kl_m@167.150.100.133:450?security=tls&insecure=0&headerType=none&fp=chrome&type=tcp&allowInsecure=0&sni=grape-power-sg.roxa.org#VConfing
 trojan://0_Oms89nH82l_Ki813_Nxmw81_Rbt_Jq190Kl_m@167.150.100.133:450?security=tls&insecure=0&headerType=none&fp=chrome&type=tcp&allowInsecure=0&sni=grape-power-sg.roxa.org#V2ray_Alpha💚 9
