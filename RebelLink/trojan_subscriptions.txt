@@ -1,0 +1,1 @@
+trojan://humanity@104.16.174.36:443/?type=ws&host=www.ignitelimit.com&path=%2Fassignment&security=tls&sni=www.ignitelimit.com#Channel%20id%3A%20%40IP_CF%20%F0%9F%87%A8%F0%9F%87%A6
