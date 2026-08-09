@@ -1,1 +1,1 @@
-trojan://ba07a8af-5544-48ac-ab62-3b6c00a44fa6@hkdcrtc-e.catcat321.com:20041?security=tls&insecure=1&headerType=none&fp=chrome&type=tcp&allowInsecure=1&sni=de.catxstar.com#Free%20177%20%40Outline_Vpn
+trojan://BxceQaOe@119.246.1.143:443?allowInsecure=1#%F0%9F%87%AD%F0%9F%87%B0%20HK%201
