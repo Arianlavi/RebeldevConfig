@@ -1,1 +1,2 @@
+trojan://MiTiVPN@151.101.56.7:443?path=%2F---%40MiTiVPN---%40MiTiVPN%2F---%40MiTiVPN---%40MiTiVPN%2F---%40MiTiVPN---%40MiTiVPN%2Fdde---%40MiTiVPN---%40MiTiVPN%2F---%40MiTiVPN---%40MiTiVPN%2F---%40MiTiVPN---%40MiTiVPN&security=tls&alpn=http%2F1.1&insecure=1&host=s1a-mitivpn--mitivpn--mitivpn-mitivpn---mitivpn.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=1&sni=default.fastly.com#%F0%9F%87%BA%F0%9F%87%B8%40FreakConfig
 trojan://BxceQaOe@119.246.1.143:443?allowInsecure=1#%F0%9F%87%AD%F0%9F%87%B0%20HK%201
