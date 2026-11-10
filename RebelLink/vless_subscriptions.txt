@@ -1,2 +1,0 @@
-vless://9c6e83fc-b755-4ad4-9b0a-14b610153d8f@5.187.4.75:8443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=0bmhEnhtswgFKbBedH4ez5O4xmgMfXIuEuSdFLy0PmI&security=reality&sid=25115fee0590a21e&sni=www.samsung.com&type=tcp#%F0%9F%91%BE12@oneclickvpnkeys
-vless://13e541f3-d09d-4633-89df-8513db0ced20@45.86.60.174:16443?encryption=none&type=tcp&security=none
